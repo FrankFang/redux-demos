@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux'
 import { Provider } from "react-redux";
 
-const stateChanger = (state, action)=>{
+const reducer = (state, action)=>{
   if(state === undefined){
     return {n: 0}
   }else{
@@ -18,7 +18,7 @@ const stateChanger = (state, action)=>{
     }
   }
 }
-const store = createStore(stateChanger)
+const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
